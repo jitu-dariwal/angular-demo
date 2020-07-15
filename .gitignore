@@ -150,3 +150,52 @@ dist
 # System Files
 /learning/.DS_Store
 /learning/Thumbs.db
+
+
+# Demo
+
+# compiled output
+/demo/dist
+/demo/tmp
+/demo/out-tsc
+# Only exists if Bazel was run
+/demo/bazel-out
+
+# dependencies
+/demo/node_modules
+
+# profiling files
+/demo/chrome-profiler-events*.json
+/demo/speed-measure-plugin*.json
+
+# IDEs and editors
+/demo/.idea
+/demo/.project
+/demo/.classpath
+/demo/.c9/
+
+*.launch
+/demo/.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+/demo/.vscode/*
+/demo/!.vscode/settings.json
+/demo/!.vscode/tasks.json
+/demo/!.vscode/launch.json
+/demo/!.vscode/extensions.json
+/demo/.history/*
+
+# misc
+/demo/.sass-cache
+/demo/connect.lock
+/demo/coverage
+/demo/libpeerconnection.log
+/demo/npm-debug.log
+/demo/yarn-error.log
+/demo/testem.log
+/demo/typings
+
+# System Files
+/demo/.DS_Store
+/demo/Thumbs.db
