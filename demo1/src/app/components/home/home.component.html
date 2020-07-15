@@ -1,0 +1,22 @@
+<h3 appChangeText> {{homecomponent}} </h3>
+<div> Months :
+	<select (change) = "changemonths($event)">
+		<option *ngFor = "let i of months">{{i}}</option>
+	</select>	
+</div>
+
+<div>
+   <span *ngIf = "isavailable; then condition1 else condition2">
+      Condition is valid.
+   </span>
+   <ng-template #condition1>Condition is valid</ng-template>
+   <ng-template #condition2>Condition is invalid</ng-template>
+</div>
+
+<ul *ngFor = "let data of httpdata">
+   <li>Name : {{data.name}} Address: {{data.address.city}}</li>
+</ul>
+
+<button (click)="myClickFunction($event)">
+   Click Me
+</button>

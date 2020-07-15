@@ -1,0 +1,49 @@
+<h1>Template Driven Form</h1>
+<form #userlogin = "ngForm" (ngSubmit) = "onClickSubmit(userlogin.value)" >
+   <input type = "text" name = "emailid" placeholder = "emailid" ngModel>
+   <br/>
+   <input type = "password" name = "passwd" placeholder = "passwd" ngModel>
+   <br/>
+   <input type = "submit" value = "submit">
+</form>
+
+<hr/>
+
+<br/><br/>
+
+<h1>Model Driven Form </h1>
+<div>
+	<form [formGroup] = "formdata" (ngSubmit) = "onClickSubmit(formdata.value)" >
+		<input type = "text" class = "fortextbox" name = "emailid" placeholder = "emailid" formControlName="emailid"/>
+		
+		<div *ngIf="formdata.controls['emailid'].invalid && (formdata.controls['emailid'].dirty || formdata.controls['emailid'].touched || formdata.submitted)" class="alert alert-danger">
+			<div *ngIf="formdata.controls['emailid'].errors.required">
+				Email is required.
+			</div>
+		</div>
+		
+		<div *ngIf="formdata.submitted && formdata.controls['emailid'].invalid" class="text-danger">
+			<div *ngIf="emailid.errors.required">Email is required</div>
+			<div *ngIf="emailid.errors.email">Email must be a valid email address</div>
+		</div>
+		
+		<!--<div class="error" *ngIf="formdata.controls['emailid'].hasError('required') && formdata.controls['emailid'].touched">Confirm Password is required</div>-->
+		
+		
+		<br/>
+		
+		
+		
+		
+		<input type = "password" class = "fortextbox" name="passwd" 
+         placeholder = "passwd" formControlName = "passwd">
+		<br/>
+      
+		<!--<input type = "submit" [disabled] = "!formdata.valid" class = "forsubmit" value = "Log In">-->
+	  
+		<input type = "submit"  class = "forsubmit" value = "Log In"/>
+	</form>
+</div>
+<p>
+   Email entered is : {{emailid}}
+</p>

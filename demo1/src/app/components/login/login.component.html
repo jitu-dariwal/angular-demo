@@ -1,0 +1,30 @@
+<div *ngIf="this.pageData">
+	<h1>{{this.pageData.title}}</h1>
+	<p innerHTML="{{this.pageData.body}}"></p>
+</div>	
+
+
+<h1 style="text-align:center">
+  Angular Login Example
+</h1>
+<div class="login">
+	<h2 class="login-header">Log in</h2>  
+	<form [formGroup]="loginForm" #formDir="ngForm">
+
+		<p [ngClass]="{ 'has-error': isSubmitted && formControls.email.errors }">
+		  <input type="email" placeholder="Email" formControlName="email">
+		</p>
+
+		<div *ngIf="loginForm.controls.email.touched && loginForm.controls.email.invalid && loginForm.controls.email.errors.required" class="text-danger">Email is required.</div> 
+
+		<p [ngClass]="{ 'has-error': isSubmitted && formControls.password.errors }">
+		  <input type="password" placeholder="Password" formControlName="password">
+		</p>
+
+		<div *ngIf="loginForm.controls.password.touched && loginForm.controls.password.invalid && loginForm.controls.password.errors.required" class="text-danger">Password is required.</div>
+
+		<p>      
+		   <button type="submit" class="btn btn-success"  (click)="login()">Continue</button>
+		</p>
+	</form>
+</div>
