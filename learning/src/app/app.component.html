@@ -1,0 +1,17 @@
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+</div>
+<h3> {{ user }} </h3>
+<h1>Angular 7 Routing Demo</h1> 
+<nav> 
+   <a [routerLinkActive]="['active']" routerLink = "/home">Home</a>
+   
+   <a [routerLinkActive]="['active']" routerLink = "/contactus">Contact Us </a>
+   
+   <a [routerLinkActive]="['active']" routerLink = "/demo">Demo Test </a> 
+   
+   <a [routerLinkActive]="['active']" routerLink = "/form">Form </a> 
+</nav> 
+<router-outlet></router-outlet>

@@ -102,3 +102,51 @@ dist
 
 # TernJS port file
 .tern-port
+
+# learning
+
+# compiled output
+/learning/dist
+/learning/tmp
+/learning/out-tsc
+# Only exists if Bazel was run
+/learning/bazel-out
+
+# dependencies
+/learning/node_modules
+
+# profiling files
+/learning/chrome-profiler-events*.json
+/learning/speed-measure-plugin*.json
+
+# IDEs and editors
+/learning/.idea
+/learning/.project
+/learning/.classpath
+/learning/.c9/
+
+*.launch
+/learning/.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+/learning/.vscode/*
+/learning/!.vscode/settings.json
+/learning/!.vscode/tasks.json
+/learning/!.vscode/launch.json
+/learning/!.vscode/extensions.json
+/learning/.history/*
+
+# misc
+/learning/.sass-cache
+/learning/connect.lock
+/learning/coverage
+/learning/libpeerconnection.log
+/learning/npm-debug.log
+/learning/yarn-error.log
+/learning/testem.log
+/learning/typings
+
+# System Files
+/learning/.DS_Store
+/learning/Thumbs.db

@@ -1,0 +1,51 @@
+<div class="row">
+	<div class="col-md-6">
+		<h3>Template Driven Form</h3>
+		<form #userlogin = "ngForm" (ngSubmit) = "onClickSubmit(userlogin.value)"> 
+		   <input type = "text" name = "emailid" placeholder = "emailid" ngModel> 
+		   <br/> 
+		   <input type = "password" name = "passwd" placeholder = "passwd" ngModel> 
+		   <br/> 
+		   <input type = "submit" value = "submit"> 
+		</form>
+		
+		
+		<hr/>
+
+		<h3>Model Driven Form</h3>
+		<div> 
+			<form [formGroup] = "formdata" (ngSubmit) = "onClickSubmit(formdata.value)" > 
+				<input type = "text" class = "fortextbox" name = "emailid" placeholder = "emailid" formControlName = "emailid"> 
+				<br/> 
+			  
+				<input type = "password" class = "fortextbox" name = "passwd" placeholder = "passwd" formControlName = "passwd"> 
+				<br/>
+			  
+				<input [disabled] = "!formdata.valid" type = "submit" class = "forsubmit" value = "Log In"> 
+			</form>
+		</div> 
+		<p> Email entered is : {{emailid}} </p>
+
+	</div>	
+	
+	<div class="col-md-6">
+		<div class="login">
+			<h2 class="login-header">Log in</h2><br/>
+			<form [formGroup]="loginForm" #formDir="ngForm">
+				<div class="form-group" [ngClass]="{ 'has-error': isSubmitted && loginForm.controls.email.invalid }">
+					<input class="form-control" type="email" placeholder="Email" formControlName="email">
+				
+					<div *ngIf="loginForm.controls.email.touched && loginForm.controls.email.invalid && loginForm.controls.email.errors.required" class="text-danger">Email is required.</div> 
+				</div>
+				<div class="form-group" [ngClass]="{ 'has-error': isSubmitted && loginForm.controls.password.invalid }">
+					<input class="form-control" type="password" placeholder="Password" formControlName="password">
+				
+					<span *ngIf="loginForm.controls.password.touched && loginForm.controls.password.invalid && loginForm.controls.password.errors.required" class="text-danger">Password is required.</span>
+				</div>
+				<div class="form-group">      
+				   <button type="submit" class="btn btn-success"  (click)="login()">Continue</button>
+				</div>
+			</form>
+		</div>
+	</div>	
+</div>

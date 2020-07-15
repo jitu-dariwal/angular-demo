@@ -1,0 +1,9 @@
+<p>contactus works!</p>
+<p>{{env.siteName}}</p>
+<br/>
+
+<li>Meta Title : {{persondata.data.meta_title}}</li>
+<li>Meta Description : {{persondata.data.meta_description}}</li>
+<li>Body : <div *ngIf="persondata.data" [innerHTML]="persondata.data.body"></div></li>
+<li>Status : {{persondata.status}}</li>
+<li>languageCode : {{persondata.languageCode}}</li>
